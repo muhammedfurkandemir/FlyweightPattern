@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class CreateWorldPrefab : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int width;
+    public int depth;
+    public GameObject cube;
     void Start()
     {
+        for (int x = 0; x < width; x++)        
+            for (int z = 0; z < depth; z++)//x*z ebatlarında küplerden oluşan bir görüntü elde etmemizi sağladı.
+            {
+                Vector3 pos = new Vector3(x, 0, z);//x ve z ye göre pozisyonlar almamızı sağlar.
+                GameObject go = Instantiate(cube, pos, Quaternion.identity);
+            }
         
     }
 
