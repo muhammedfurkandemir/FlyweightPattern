@@ -12,7 +12,9 @@ public class CreateWorldPrefab : MonoBehaviour
         for (int x = 0; x < width; x++)        
             for (int z = 0; z < depth; z++)//x*z ebatlarında küplerden oluşan bir görüntü elde etmemizi sağladı.
             {
-                Vector3 pos = new Vector3(x, 0, z);//x ve z ye göre pozisyonlar almamızı sağlar.
+                Vector3 pos = new Vector3(x,
+                    Mathf.PerlinNoise(x*0.2f,z*0.2f)*3f
+                    , z);//x ve z ye göre pozisyonlar almamızı sağlar.
                 GameObject go = Instantiate(cube, pos, Quaternion.identity);
             }
         
