@@ -4,7 +4,7 @@ using Unity.Mathematics;
 using UnityEngine;
 
 
-[RequiresEntityConversion]
+//[RequiresEntityConversion]
 public class PerlinPositionProxy : MonoBehaviour, IConvertGameObjectToEntity
 {
     public void Convert(Entity entity, EntityManager dstManager, GameObjectConversionSystem conversionSystem)
